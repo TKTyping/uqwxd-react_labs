@@ -30,12 +30,20 @@ const App = () => {
 
   
 return(
-<div className ="App">
-<h1>Todo List</h1>
-<form>
-<input type ="text" align ="right" id= 'todoAdd'/>
-<button type ="submit">Add Todo</button>
-</form>
+  <div id="todo-list">
+  <h1>Todo List</h1>
+      <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            id = 'todoAdd'
+          />
+          <button type="submit">Add Todo</button>
+      </form>
+      {todos.map((todo) =>
+          <div className="todo" key={todo.id}>
+              <div className="todo-text">{todo.text}</div>
+          {/* insert delete button below this line */}
+          </div>)}
 </div>
 );
 };
