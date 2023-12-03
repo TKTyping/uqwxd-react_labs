@@ -4,7 +4,21 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   
   // Add the handlesubmit code here
-  
+  function handleSubmit(e) {
+    e.preventDefault();
+    let todo = document.getElementById('todoAdd').value
+    const newTodo = {
+      id: new Date().getTime(),
+      text: todo.trim(),
+      completed: false,
+    };
+    if (newTodo.text.length > 0 ) {
+        setTodos([...todos].concat(newTodo));
+    } else {
+        alert("Enter Valid Task");
+    }
+    document.getElementById('todoAdd').value = ""
+  }
   
   // Add the deleteToDo code here
 
