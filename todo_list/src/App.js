@@ -45,7 +45,7 @@ return(
       {todos.map((todo) =>
           <div className="todo" key={todo.id}>
               <div className="todo-text">{todo.text}</div>
-          {/* insert delete button below this line */}
+              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </div>)}
 </div>
 );
