@@ -52,7 +52,8 @@ return(
       </form>
       {todos.map((todo) =>
           <div className="todo" key={todo.id}>
-              <div className="todo-text">{todo.text}</div>
+              <div className="todo-text">{todo.text}
+              <input type="checkbox" id="completed" checked={todo.completed} onChange={() => toggleComplete(todo.id)}/></div>
               <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </div>)}
 </div>
